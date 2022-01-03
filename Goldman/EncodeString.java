@@ -5,6 +5,9 @@ import java.util.Scanner;
 class EncodedString {
     public static void main(String[] args) {
 
+        String s = "asdasd";
+        StringBuilder sb = new StringBuilder(s);
+        System.out.println(sb.lastIndexOf("0"));
         Scanner sc = new Scanner(System.in);
 
         int T = sc.nextInt();
@@ -26,6 +29,7 @@ class EncodedString {
             T--;
         }
         sc.close();
+
     }
 }
 
