@@ -25,6 +25,7 @@ class EncodedString {
 
             T--;
         }
+        sc.close();
     }
 }
 
