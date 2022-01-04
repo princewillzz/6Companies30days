@@ -7,6 +7,7 @@ public class GCDOfStrings {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(gcdOfStrings(sc.next(), sc.next()));
+        sc.close();
     }
     
     public static String gcdOfStrings(String str1, String str2) {

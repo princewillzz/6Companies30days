@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 
-class GFG {
+class CountSubarrays {
 	public static void main(String[] args) throws IOException
 	{
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
