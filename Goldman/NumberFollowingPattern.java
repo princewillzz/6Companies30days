@@ -2,8 +2,9 @@ package Goldman;
 
 // { Driver Code Starts
 //Initial Template for Java
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class GFG
 {
@@ -23,7 +24,7 @@ class GFG
 
 //User function Template for Java
 class Solution{
-    static String printMinNumberForPattern(String S){
+    String printMinNumberForPattern(String S){
         
         // Initialize current_max (to make sure that 
         // we don't use repeated character 
