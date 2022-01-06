@@ -19,7 +19,7 @@ class GFG {
             for (int i = 0; i < N; i++) A[i] = Integer.parseInt(input_line[i]);
 
             Solution ob = new Solution();
-            System.out.println(ob.maxProfit(K, N, A));
+            System.out.println(ob.maximumProfit(A, K));
         }
     }
 }
@@ -29,22 +29,29 @@ class GFG {
 // User function Template for Java
 
 class Solution {
-    static int maxProfit(int K, int N, int A[]) {
-        int profits[][] = new int[K+1][N+1];
-        
-        for(int t = 1; t <= K; t++) {
-            int didBuyPrevMax = Integer.MIN_VALUE;
-            for(int d = 1; d <= N; d++) {
+
+
+    int maximumProfit(int prices[], int k) {
+
+        int profits[][] = new int[k+1][prices.length+1];
+
+        for (int t = 1; t <= k; t++) {
+            int didBuyAtMaximumProfit = Integer.MIN_VALUE;
+            for (int d = 1; d <= profits.length; d++) {
                 
-                didBuyPrevMax = Math.max(didBuyPrevMax, profits[t-1][d] - A[d-1]);
-                
+                didBuyAtMaximumProfit = Math.max(didBuyAtMaximumProfit, profits[t-1][d] - prices[d-1]);
+
+                int doSell = didBuyAtMaximumProfit + prices[d-1];
                 int dontSell = profits[t][d-1];
-                int doSell = didBuyPrevMax + A[d-1];
-                
-                profits[t][d] = Math.max(dontSell, doSell);
+
+                profits[t][d] = Math.max(doSell, dontSell);
+
             }
         }
-        
-        return profits[K][N];
+
+        return profits[k][prices.length];
+
     }
+
+
 }
