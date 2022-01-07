@@ -1,4 +1,3 @@
-package Amazon;
 
 // { Driver Code Starts
 // Initial Template for Java
