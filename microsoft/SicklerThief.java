@@ -35,7 +35,17 @@
         //Function to find the maximum money the thief can get.
         public int FindMaxSum(int arr[], int n)
         {
-            return helper(arr, n, 0, new Integer[n+1]);
+            if(n == 0) return 0;
+            int memo[] = new int[n+1];
+            
+            memo[1] = arr[0];
+            for(int i = 2; i <= n; i++) {
+                memo[i] = Math.max(arr[i-1] + memo[i-2], memo[i-1]);
+            }
+            
+            return memo[n];
+            
+            // return helper(arr, n, 0, new Integer[n+1]);
         }
         
         int helper(int ar[], int n, int i, Integer memo[]) {
